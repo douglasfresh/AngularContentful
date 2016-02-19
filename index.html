@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="contentful" ng-controller="ContentCtrl">
+<html ng-app="contentful" ng-controller="ContentfulCtrl">
 
   <head>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
@@ -16,7 +16,7 @@
         </li>
       </ul>
 
-      <h1>{{contact.id}}</h1>
+      <h1>{{contact.name}}</h1>
       <ul>
         <li ng-repeat="(field, value) in contact">
           {{field}}: {{value}}

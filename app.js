@@ -16,9 +16,7 @@ var client = contentful.createClient({
 
 });
 
-function ContentCtrl($scope, $q) {
-  var brand = $q.when(client.entries({content_type:'brand'}));
-  var contact = $q.when(client.entries({content_type:'contact'}));
+function ContentfulCtrl($scope, $q) {
   var entries = $q.when(client.entries());
 
   entries.then(function(entries) {
@@ -27,14 +25,19 @@ function ContentCtrl($scope, $q) {
         case "brand":
           $scope.brand = entry.fields;
           break;
+        case "contact":
+          $scope.contact = entry.fields;
+          break;
+        case "design":
+          $scope.design = entry.fields;
+          break;
+        case "section":
+          $scope.sections.push(entry.fields);
+          break;
         default:
           break;
       } 
     });
-  });
-
-  contact.then(function(entries) {
-    $scope.contact = entries[0].sys;
   });
 }
 
