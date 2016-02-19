@@ -23,8 +23,8 @@ function ContentCtrl($scope, $q) {
 
   entries.then(function(entries) {
     entries.forEach(function(entry) {
-      switch(entry.sys.conteType) {
-        case 'brand':
+      switch(entry.sys.contentType.sys.id) {
+        case "brand":
           $scope.brand = entry.fields;
           break;
         default:
