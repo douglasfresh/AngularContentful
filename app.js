@@ -42,4 +42,4 @@ function ContentfulCtrl($scope, $q) {
 }
 
 angular.module('contentful', []).
-  controller('ContentCtrl', ContentCtrl);
+  controller('ContentfulCtrl', ContentCtrl);
